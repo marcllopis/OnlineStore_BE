@@ -14,3 +14,14 @@ type Picture {
   updatedAt: DateTime! @updatedAt
   # user: User!
 }
+
+type Album {
+  id: ID! @id
+  title: String!
+  description: String
+  coverImage: String
+  largeCoverImage: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  pictures: [Picture]
+}

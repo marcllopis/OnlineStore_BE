@@ -1,8 +1,9 @@
+const { forwardTo } = require('prisma-binding');
+
 const Query = {
-  async pictures(parent, args, ctx, info) {
-    const pictures = await ctx.db.query.pictures();
-    return pictures;
-  }
+  pictures: forwardTo('db'),
+  albums: forwardTo('db'),
+  album: forwardTo('db'),
 };
 
 module.exports = Query;

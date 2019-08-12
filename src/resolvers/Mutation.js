@@ -6,13 +6,17 @@ const Mutations = {
     return picture;
   },
   async createAlbum(parent, args, ctx, info) {
+    const picturesIds = [];
+    args.pictures.map(picture => picturesIds.push({ id: picture }))
+
     const album = await ctx.db.mutation.createAlbum({
       data: {
-        ...args
+        ...args,
+        pictures: {
+          connect: picturesIds,
+        }
       }
     }, info)
-    console.log('album', album);
-
     return album;
   },
   updateAlbum(parent, args, ctx, info) {

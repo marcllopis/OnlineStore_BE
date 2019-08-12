@@ -12,7 +12,6 @@ type Picture {
   largeImage: String
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
-  # user: User!
 }
 
 type Album {

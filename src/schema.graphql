@@ -4,6 +4,7 @@ type Mutation {
   createPicture(title: String, description: String, image: String, largeImage: String): Picture!
   createAlbum(title: String, description: String, coverImage: String, largeCoverImage: String pictures:[String]): Album!
   updateAlbum(id: ID!, title: String, description: String, coverImage: String, largeCoverImage: String): Album!
+  signup(email: String!, password: String!, name: String!): User!
 }
 
 type Query {
